@@ -1,11 +1,11 @@
-type Post {
+type Level {
   id: ID! @unique
   createdAt: DateTime!
   updatedAt: DateTime!
-  isPublished: Boolean! @default(value: "false")
-  title: String!
-  text: String!
-  author: User!
+  isPublished: Boolean! @default(value: "true")
+  name: String!
+  description: String!
+  creator: User!
 }
 
 type User {
@@ -13,5 +13,5 @@ type User {
   email: String! @unique
   password: String!
   name: String!
-  posts: [Post!]!
+  levels: [Level!]!
 }
