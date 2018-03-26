@@ -1,0 +1,17 @@
+type Level {
+  id: ID! @unique
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  isPublished: Boolean! @default(value: "true")
+  name: String!
+  description: String!
+  creator: User!
+}
+
+type User {
+  id: ID! @unique
+  email: String! @unique
+  password: String!
+  name: String!
+  levels: [Level!]!
+}
